@@ -215,24 +215,26 @@ label leftRoute:
     "The boys have no idea when they'll reach the top until they stand before two ornate doors."
     "The doors open inward to reveal a royal blue bird."
     t "I've never seen a bird so big..."
-				Octa: Don't be rude to their ruler!
-					The large bird tilts its head towards them.
-						Birb: Welcome to our humble abode! My name is Queen Birb.
-							Birb: Might I interest you treats or a tour of this place?
-								Octa looks to Tetra.
-									Bow head.
-										Birb: Truly, there is no need to be so formal.
-											Octa: I'm so, so sorry to inconvenience you, but might you know the way back.
-												Birb: Would you happen to be part of the Bread Town?
-													Tetra: Bread Town?
-														Birb: Yes, there is a town south of here, known for their freshest bread.
-															Octa: Yes, yes! We are part of that town. We don't know how to get back.
-									Swear fealty to the queen.
-										Birb: Oh ho ho, you're a rather bold one, aren't you?
-											Birb: do you wish to relinquish your life as a human to become a bird?
-												Tetra: I do.
-													Birb: So be it! You will be my newest knight.
-														game end.
+    o "Don't be rude to their ruler!"
+    "The large bird tilts its head towards them."
+    b "Welcome to our humble abode! My name is Queen Birb."
+    b "Might I interest you treats or a tour of this place?"
+    "Octa looks to Tetra."
+    menu:
+        "Bow head.":
+            b "Truly, there is no need to be so formal."
+            o "I'm so, so sorry to inconvenience you, but might you know the way back."
+            b "Would you happen to be part of the Bread Town?"
+            t "Bread Town?"
+            b "Yes, there is a town south of here, known for their freshest bread."
+            o "Yes, yes! We are part of that town. We don't know how to get back."
+        "Swear fealty to the queen.":
+            b "Oh ho ho, you're a rather bold one, aren't you?"
+            b "Do you wish to relinquish your life as a human to become a bird?"
+            t "I do."
+            b "So be it! You will be my newest knight."
+            return
+    
 
 label rightRoute:
     # This ends the game.
