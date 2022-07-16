@@ -154,7 +154,7 @@ label leftRoute:
                     $ rollDie = renpy.random.randint(1, 6)
                 "Roll Die with Curiosity":
                     $ rollDie = renpy.random.randint(1, 6)
-                "ROLL DIE WITH WITH THE SOUL OF CHARLES DARWIN":
+                "ROLL DIE WITH THE SOUL OF CHARLES DARWIN":
                     $ rollDie = renpy.random.randint(1, 6)
             if(rollDie >= 4):
                 b "Hello, tiny human."
@@ -228,13 +228,126 @@ label leftRoute:
             t "Bread Town?"
             b "Yes, there is a town south of here, known for their freshest bread."
             o "Yes, yes! We are part of that town. We don't know how to get back."
+            "Tetra shoots a glare at Octa."
         "Swear fealty to the queen.":
             b "Oh ho ho, you're a rather bold one, aren't you?"
             b "Do you wish to relinquish your life as a human to become a bird?"
             t "I do."
             b "So be it! You will be my newest knight."
+            "From then on, Tetra begins his transformation into a bird knight."
             return
     
+    b "I've heard of children getting lost in our forest."
+    b "We still don't know why that is the case, but we can take you home."
+    b "We prefer to not war with the rest of the humans again."
+    o "Look, Tetra! We can go home now!"
+    t "Are you even sure?"
+    o "It's better than being lost!"
+    "To the side, two large birds appear near the window."
+    b "Those two birds shall be your rides. Though you're always welcome to come back."
+    o "Thank you so much, Queen Birb."
+    t "Yes, uh, thank you."
+
+    "The two boys climb onto the backs of the larger birds."
+    t "Huh, why don't these ones speak?"
+    o "You just can't understand them."
+    "The birds squawk and within seconds the two boys ascend into the air."
+    o "I've never seen something like this in my life!"
+    menu:
+        "Roll Die":
+            $ rollDie = renpy.random.randint(1, 6)
+        "Roll Die with Vigor":
+            $ rollDie = renpy.random.randint(1, 6)
+        "ROLL DIE WITH OH GOD WE'RE GONNA PLUMMET TO OUR DEATHS":
+            $ rollDie = renpy.random.randint(1, 6)
+    if(rollDie >= 5):
+        t "Me too! I might want to come back to this place."
+        "The entire ride goes without a hitch. The sky is so blue and vast."
+        "It's a sight that neither child wants to forget this wild day."
+    elif(rollDie >=3):
+        t "This whole thing is kind of nervewrecking."
+        "Tetra grips at the feathers, causing the bird to screech."
+        "This whole ride is turbulent, but the view makes up for it. Somewhat."
+    else:
+        t "Help!"
+        "Tetra slips from the back of the bird."
+        o "Tetra!"
+        o "Hey, birdie, please?"
+        menu:
+            "Roll Die":
+                $ rollDie = renpy.random.randint(1, 6)
+            "Roll Die with Grace":
+                $ rollDie = renpy.random.randint(1, 6)
+            "ROLL DIE WITH THE POWER OF THE UNYIELDING BIRB KNIGHT":
+                $ rollDie = renpy.random.randint(1, 6)
+        if(rollDie >= 4):
+            "Two claws latch onto Tetra's shoulders, pulling him out of free fall."
+            o "I've got you!"
+            "Tetra squirms in the grip, but stills himself."
+            t "This is a horrible experience."
+            o "Would you rather still be falling?"
+            t "No."
+        else:
+            "The claws were unable to catch Tetra and he plummets to the ground."
+            o "Oh no!"
+            t "Please! Save meeeee-!"
+            "..."
+            "Tetra's not sure how long he falls for until he lands into a lake."
+            "He pulls himself up to the land, where wolves are there to greet him."
+            menu:
+                "Talk to the wolves":
+                    menu:
+                        "Roll Die":
+                            $ rollDie = renpy.random.randint(1, 6)
+                        "Roll Die with Courage":
+                            $ rollDie = renpy.random.randint(1, 6)
+                        "ROLL DIE WITH A PIECE OF LEATHER":
+                            $ rollDie = renpy.random.randint(1, 6)
+                    if(rollDie > 2):
+                        w "Child, you have appear out of the sky all of a sudden."
+                        t "You talk."
+                        w "That I do. Now come, let us find you new furs."
+                        "Tetra slowly became more acquainted to the wolf. Then they were family."
+                        "Nowadays, he spends his time in forest hunting and foraging with the wolf."
+                        return
+                    else:
+                        "The Wolf howls at Tetra, and he shrugs."
+                        "There's not much he could do now, then wait."
+                        return
+                "Defend yourself":
+                    menu:
+                        "Roll Die":
+                            $ rollDie = renpy.random.randint(1, 6)
+                        "Roll Die with Courage":
+                            $ rollDie = renpy.random.randint(1, 6)
+                        "ROLL DIE WITH A PIECE OF LEATHER":
+                            $ rollDie = renpy.random.randint(1, 6)
+                    if(rollDie > 2):
+                        "Tetra picks up the stick and readies it to attack."
+                        "He waves it at the wolf before it starts running away."
+                        "This is his territory now, and he'll defend it with his life."
+                        return
+                    else:
+                        "Instead of defending himself with the stick he found, the stick slips out of his hand and into the woods."
+                        "He braces himself for impact, but the stick is right in front of him with the wolf."
+                        "He throws it again. The wolf chases after it. It turns into a game of fetch."
+                        "He's found a friend right here after all."
+                        return
+
+    "The birds land without a problem onto the familiar streets the boys know."
+    "They wave a thanks and farewell to the birds."
+    o "Now what do you think about that for an adventure?"
+    t "Not what I signed up for. At all."
+    o "Come on, now-"
+    m "You."
+    "Octa scurries to hide behind Tetra."
+    t "You."
+    m "You're friends with the birds now, I take it?"
+    o "We are! So you should fear us!"
+
+    "The man lets out a hearty laugh."
+
+    return
 
 label rightRoute:
     # This ends the game.
