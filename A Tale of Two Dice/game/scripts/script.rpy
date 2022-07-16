@@ -346,10 +346,49 @@ label leftRoute:
     o "We are! So you should fear us!"
 
     "The man lets out a hearty laugh."
+    m "I'm actually friends with them too!"
+    o "Wait.... I thought you made bread monsters!"
+    t "Now where did you hear that from?"
+    m "But I lost my lucky hat, and my bread hasn't been good since."
+    t "It's been a da-"
+    o "Don't mind my friend here."
+    "Octa procures a white hat out of thin air?"
+    "Thought he lost it for a while."
+    o "Would this be yours?"
+
+    "The man takes the hat from Octa's hands."
+    m "This is it! Thank you so much!"
+    "Tetra side-eyes Octa."
+    t "It's no problem at all."
+    t "Octa, there's no way that he's forgotten."
+    o "Count your blessings, Tetra. Count them lots."
+
+    m "Now, I have to feed the birds."
+    o "Can we join?"
+    t "Octa!"
+    o "What? Nothing wrong with just asking."
+    m "You'd like to join me?"
+    "The man pulls out extra bread from his basket."
+    m "Let us go then!"
+    m "I'm not the well-known baker of this place for nothing!"
+
+    "The boys rush after the baker and his bread."
+    "When they stop on a grassy field, multiple birds land nearby."
+    "Though wary at first, the three pass out the bread to all of them."
+    "Octa takes turns talking to each of the birds, introducing everyone to each one."
+    t "So about what we're betting?"
+    o "Betting? I didn't say anything about that."
+    t "Your five pence, or whatever it is."
+    o "Well.... Let's roll then! You have a die for a reason."
+    o "If you get the number I'm thinking, you win!"
+    "Tetra shakes the die and rolls."
+    "It lands."
+    o "Dang it!"
 
     return
 
 label rightRoute:
     # This ends the game.
-
-    return
+    o "TETRA WHERE ARE YOU GOING THIS IS THE LEFT NOT RIGHT."
+    t "W h a t."
+    jump leftRoute
