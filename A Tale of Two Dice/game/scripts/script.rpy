@@ -382,6 +382,13 @@ label leftRoute:
     o "Well.... Let's roll then! You have a die for a reason."
     o "If you get the number I'm thinking, you win!"
     "Tetra shakes the die and rolls."
+    menu:
+        "Roll Die":
+            $ rollDie = renpy.random.randint(1, 6)
+        "Roll Die with a renewed sense of Vigor and Spirit":
+            $ rollDie = renpy.random.randint(1, 6)
+        "ROLL DIE WITH YEAH":
+            $ rollDie = renpy.random.randint(1, 6)
     "It lands."
     o "Dang it!"
 
