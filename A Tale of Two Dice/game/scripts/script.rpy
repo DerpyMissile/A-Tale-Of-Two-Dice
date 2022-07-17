@@ -306,20 +306,23 @@ label leftRoute:
     t "What is this?"
 
     "A red bird flies down to perch on Octa's shoulders."
-    o "This must be the amazing bird civilizations from the stories!"
-    t "Wait, you've heard of this?"
     show octa Neutral at right
+    o "This must be the amazing bird civilizations from the stories!"
+    show tetra Neutral at left
+    t "Wait, you've heard of this?"
     o "Obviously, who hasn't? Anyways, birdie, do you know where the town is?"
     "The bird chirps and shakes its head."
     t "Well, could you lead us to your ruler?"
     "The bird nods and flaps over to the inside of the tree."
     o "Now, we gotta go."
+    show tetra Sad at left
     t "I don't-"
     "Octa grabs Tetra's wrist and goes inside."
 
     "The bird leads them through a vast expanse of stairs."
     "The boys have no idea when they'll reach the top until they stand before two ornate doors."
     "The doors open inward to reveal a royal blue bird."
+    show tetra Happy at left
     t "I've never seen a bird so big..."
     show octa Angry at right
     o "Don't be rude to their ruler!"
@@ -330,12 +333,15 @@ label leftRoute:
     "Octa looks to Tetra."
     menu:
         "Bow head.":
+            show tetra Neutral at left
             b "Truly, there is no need to be so formal."
             o "I'm so, so sorry to inconvenience you, but might you know the way back."
             b "Would you happen to be part of the Bread Town?"
             t "Bread Town?"
             b "Yes, there is a town south of here, known for their freshest bread."
+            show octa Happy at right
             o "Yes, yes! We are part of that town. We don't know how to get back."
+            show tetra Angry at left
             "Tetra shoots a glare at Octa."
         "Swear fealty to the queen.":
             b "Oh ho ho, you're a rather bold one, aren't you?"
@@ -348,13 +354,15 @@ label leftRoute:
     b "I've heard of children getting lost in our forest."
     b "We still don't know why that is the case, but we can take you home."
     b "We prefer to not war with the rest of the humans again."
-    o "Look, Tetra! We can go home now!"
-    t "Are you even sure?"
     show octa Happy at right
+    o "Look, Tetra! We can go home now!"
+    show tetra Sad at left
+    t "Are you even sure?"
     o "It's better than being lost!"
     "To the side, two large birds appear near the window."
     b "Those two birds shall be your rides. Though you're always welcome to come back."
     o "Thank you so much, Queen Birb."
+    show tetra Neutral at left
     t "Yes, uh, thank you."
 
     "The two boys climb onto the backs of the larger birds."
@@ -385,16 +393,20 @@ label leftRoute:
         show roll6 at truecenter
     play sound diceRoll
     if(rollDie >= 5):
+        show tetra Happy at left
         t "Me too! I might want to come back to this place."
         "The entire ride goes without a hitch. The sky is so blue and vast."
         "It's a sight that neither child wants to forget this wild day."
     elif(rollDie >=3):
+        show tetra Neutral at left
         t "This whole thing is kind of nervewrecking."
         "Tetra grips at the feathers, causing the bird to screech."
         "This whole ride is turbulent, but the view makes up for it. Somewhat."
     else:
+        show tetra Sad at left
         t "Help!"
         "Tetra slips from the back of the bird."
+        hide tetra Sad
         show octa Neutral at right
         o "Tetra!"
         show octa Sad at right
@@ -424,14 +436,18 @@ label leftRoute:
             show octa Happy at right
             o "I've got you!"
             "Tetra squirms in the grip, but stills himself."
+            show tetra Sad at left
             t "This is a horrible experience."
             o "Would you rather still be falling?"
+            show tetra Angry at left
             t "No."
         else:
             "The claws were unable to catch Tetra and he plummets to the ground."
             o "Oh no!"
+            show tetra Sad at left
             t "Please! Save meeeee-!"
-            "..."
+            scene bush with Fade(2.0, 0.0, 2.0)
+            show tetra Sad at left
             "Tetra's not sure how long he falls for until he lands into a lake."
             "He pulls himself up to the land, where wolves are there to greet him."
             menu:
@@ -459,11 +475,13 @@ label leftRoute:
                     if(rollDie > 2):
                         w "Child, you have appear out of the sky all of a sudden."
                         t "You talk."
+                        show tetra Happy at left
                         w "That I do. Now come, let us find you new furs."
                         "Tetra slowly became more acquainted to the wolf. Then they were family."
                         "Nowadays, he spends his time in forest hunting and foraging with the wolf."
                         return
                     else:
+                        show tetra Neutral at left
                         "The Wolf howls at Tetra, and he shrugs."
                         "There's not much he could do now, then wait."
                         return
@@ -489,13 +507,17 @@ label leftRoute:
                         show roll6 at truecenter
                     play sound diceRoll
                     if(rollDie > 2):
+                        show tetra Neutral at left
                         "Tetra picks up the stick and readies it to attack."
                         "He waves it at the wolf before it starts running away."
+                        show tetra Happy at left
                         "This is his territory now, and he'll defend it with his life."
                         return
                     else:
+                        show tetra Sad at left
                         "Instead of defending himself with the stick he found, the stick slips out of his hand and into the woods."
                         "He braces himself for impact, but the stick is right in front of him with the wolf."
+                        show tetra Happy at left
                         "He throws it again. The wolf chases after it. It turns into a game of fetch."
                         "He's found a friend right here after all."
                         return
@@ -505,17 +527,20 @@ label leftRoute:
     scene bush with Fade(2.0, 0.0, 2.0)
     show octa Happy at right
     o "Now what do you think about that for an adventure?"
+    show tetra Neutral at left
     t "Not what I signed up for. At all."
     o "Come on, now-"
     m "You."
     "Octa scurries to hide behind Tetra."
     hide octa Happy
+    show tetra Angry at left
     t "You."
     m "You're friends with the birds now, I take it?"
     o "We are! So you should fear us!"
 
     "The man lets out a hearty laugh."
     m "I'm actually friends with them too!"
+    show tetra Neutral at left
     show octa Neutral at right
     o "Wait.... I thought you made bread monsters!"
     t "Now where did you hear that from?"
@@ -529,14 +554,17 @@ label leftRoute:
 
     "The man takes the hat from Octa's hands."
     m "This is it! Thank you so much!"
+    show tetra Angry at left
     "Tetra side-eyes Octa."
-    t "It's no problem at all."
+    show tetra Happy at left
+    o "It's no problem at all."
     t "Octa, there's no way that he's forgotten."
     o "Count your blessings, Tetra. Count them lots."
 
     m "Now, I have to feed the birds."
     show octa Neutral at right
     o "Can we join?"
+    show tetra Angry at left
     t "Octa!"
     show octa Sad at right
     o "What? Nothing wrong with just asking."
@@ -544,6 +572,7 @@ label leftRoute:
     "The man pulls out extra bread from his basket."
     m "Let us go then!"
     show octa Happy at right
+    show tetra Happy at left
     m "I'm not the well-known baker of this place for nothing!"
 
     "The boys rush after the baker and his bread."
@@ -551,6 +580,7 @@ label leftRoute:
     "When they stop on a grassy field, multiple birds land nearby."
     "Though wary at first, the three pass out the bread to all of them."
     "Octa takes turns talking to each of the birds, introducing everyone to each one."
+    show tetra Happy at left
     t "So about what we're betting?"
     show octa Neutral at right
     o "Betting? I didn't say anything about that."
