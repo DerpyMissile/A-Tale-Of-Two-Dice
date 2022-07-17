@@ -6,6 +6,6 @@ define w = Character('Wolf', color='#595959', image="Wolf")
 
 define diceRoll = "..//audio//Dice_roll.mp3"
 
-image bush = "..//images//newBush.jpg"
+image bush = "..//images//newBush1.jpg"
 
 default rollDie = 1
