@@ -4,4 +4,8 @@ define m = Character('The Man', color='#f1a549', image="Man")
 define b = Character('Birb', color='#f53c3c', image="Birb")
 define w = Character('Wolf', color='#595959', image="Wolf")
 
+define diceRoll = "..//audio//Dice_roll.mp3"
+
+image bush = "..//images//bush.png"
+
 default rollDie = 1

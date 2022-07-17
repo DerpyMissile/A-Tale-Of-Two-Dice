@@ -4,6 +4,7 @@
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
+    scene bush with Fade(2.0, 0.0, 2.0)
     "The sun beats down on two kids' backs, hiding in a bush."
     o "Listen, Tetra. How much are you willing to bet?"
     t "How much are you willing to bet, Octa?"
@@ -50,6 +51,7 @@ label continuing1:
                     $ rollDie = renpy.random.randint(1, 6)
                 "ROLL DIE WITH PASSION":
                     $ rollDie = renpy.random.randint(1, 6)
+            play sound diceRoll
             if(rollDie >= 3):
                 "From out of Tetra's throat, the sound of a sparrow comes out."
                 "The man turns his head over to the source."
@@ -73,6 +75,7 @@ label continuing1:
                     $ rollDie = renpy.random.randint(1, 6)
                 "ROLL DIE WITH PAIN":
                     $ rollDie = renpy.random.randint(1, 6)
+            play sound diceRoll
             if(rollDie >= 5):
                 "He lies down and starts rolling quickly down the path."
                 "The man gasps."
@@ -120,6 +123,7 @@ label continuing2:
                     $ rollDie = renpy.random.randint(1, 6)
                 "ROLL DIE WITH A CRIPPLING SENSE OF EXISTENTIALISM":
                     $ rollDie = renpy.random.randint(1, 6)
+            play sound diceRoll
             if(rollDie >= 4):
                 t "Go right!"
                 jump rightRoute
@@ -156,6 +160,7 @@ label leftRoute:
                     $ rollDie = renpy.random.randint(1, 6)
                 "ROLL DIE WITH THE SOUL OF CHARLES DARWIN":
                     $ rollDie = renpy.random.randint(1, 6)
+            play sound diceRoll
             if(rollDie >= 4):
                 b "Hello, tiny human."
                 "Tetra jumps back, while Octa laughs."
@@ -260,6 +265,7 @@ label leftRoute:
             $ rollDie = renpy.random.randint(1, 6)
         "ROLL DIE WITH OH GOD WE'RE GONNA PLUMMET TO OUR DEATHS":
             $ rollDie = renpy.random.randint(1, 6)
+    play sound diceRoll
     if(rollDie >= 5):
         t "Me too! I might want to come back to this place."
         "The entire ride goes without a hitch. The sky is so blue and vast."
@@ -280,6 +286,7 @@ label leftRoute:
                 $ rollDie = renpy.random.randint(1, 6)
             "ROLL DIE WITH THE POWER OF THE UNYIELDING BIRB KNIGHT":
                 $ rollDie = renpy.random.randint(1, 6)
+        play sound diceRoll
         if(rollDie >= 4):
             "Two claws latch onto Tetra's shoulders, pulling him out of free fall."
             o "I've got you!"
@@ -303,6 +310,7 @@ label leftRoute:
                             $ rollDie = renpy.random.randint(1, 6)
                         "ROLL DIE WITH A PIECE OF LEATHER":
                             $ rollDie = renpy.random.randint(1, 6)
+                    play sound diceRoll
                     if(rollDie > 2):
                         w "Child, you have appear out of the sky all of a sudden."
                         t "You talk."
@@ -322,6 +330,7 @@ label leftRoute:
                             $ rollDie = renpy.random.randint(1, 6)
                         "ROLL DIE WITH A PIECE OF LEATHER":
                             $ rollDie = renpy.random.randint(1, 6)
+                    play sound diceRoll
                     if(rollDie > 2):
                         "Tetra picks up the stick and readies it to attack."
                         "He waves it at the wolf before it starts running away."
@@ -389,6 +398,7 @@ label leftRoute:
             $ rollDie = renpy.random.randint(1, 6)
         "ROLL DIE WITH YEAH":
             $ rollDie = renpy.random.randint(1, 6)
+    play sound diceRoll
     "It lands."
     o "Dang it!"
 
