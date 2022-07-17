@@ -3,11 +3,13 @@
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
+    play music "<loop 0.00>..//audio//hillSong.mp3" volume 0.5
 
     scene bush with Fade(2.0, 0.0, 2.0)
     "The sun beats down on two kids' backs, hiding in a bush."
     show octa Neutral at right
     o "Listen, Tetra. How much are you willing to bet?"
+    show tetra Neutral at left
     t "How much are you willing to bet, Octa?"
     o "Bet?"
     show octa Happy at right
@@ -19,11 +21,13 @@
 
     "Tetra places a finger over Octa's mouth."
     show octa Neutral at right
+    show tetra Angry at left
     t "Shh!"
     "A man emerges from the shop, tall and stout. His basket filled with steaming bread."
     "Octa's eyes widen."
     show octa Angry at right
     o "That's him! That's the Viper. The vile villain who uh...."
+    show tetra Neutral at left
     t "Who uh....?"
     menu:
         "gambles a lot?":
@@ -41,13 +45,16 @@ label continuing1:
     t "So what's the plan?"
     o "I'm gonna take his hat, and we're hiding it in the bushes."
     o "You'll be the distraction!"
+    show tetra Angry at left
     t "Wait, I had no idea about this!"
     o "Trust me. Viper will have no idea what hit him."
+    show tetra Neutral at left
 
     hide octa Happy
     "And there Octa goes, crawling away like a mischievous rat."
     t "..."
     t "Okay, think, Tetra, what can we do with this?"
+    hide tetra Neutral
     menu:
         "Squawk like a bird":
             menu:
@@ -71,11 +78,13 @@ label continuing1:
                 show roll6 at truecenter
             play sound diceRoll
             if(rollDie >= 3):
+                show tetra Happy at left
                 "From out of Tetra's throat, the sound of a sparrow comes out."
                 "The man turns his head over to the source."
                 "From behind the man, Octa pops out from behind."
                 "He snatches the hat and runs off."
             else:
+                show tetra Neutral at left
                 "Tetra starts coughing and out of his mouth comes a sparrow."
                 "What?"
                 "Well, it got the man to turn his head anyways, so that worked."
@@ -110,9 +119,11 @@ label continuing1:
                 "He lies down and starts rolling quickly down the path."
                 "The man gasps."
                 m "What is that?!"
+                show tetra Happy at left
                 "Then Tetra rolls into the bush with such finesse that he doesn't get caught."
             else:
                 "Tetra lies and veers off the path."
+                show tetra Sad at left
                 "And then he bumps into something."
                 "Rather it's a someone."
                 "And he bumped into the man with the bread."
@@ -128,6 +139,7 @@ label continuing2:
     "The man starts looming over him."
     "Time to book it!"
     "Within seconds, Tetra pushes himself up to run after Octa."
+    show tetra Sad at left
     t "Wait up!"
     "Behind them, the man chases after them, bread and all."
     show octa Neutral at right
@@ -135,20 +147,25 @@ label continuing2:
 
     "Before the two boys, a crossroad stretches out."
     o "Which way do we go?"
+    show tetra Angry at left
     t "You're asking me?!"
     o "I don't remember where we came from!"
     o "You choose!"
     menu:
         "Left":
+            show octa Neutral at left
             t "Go left!"
             jump leftRoute
         "Right":
+            show octa Neutral at left
             t "Go right!"
             jump rightRoute
         "I don't know?":
+            show tetra Angry at left
             t "Why should I be the one to choose?"
             show octa Angry at right
             o "We don't have time! Your luck ends up working out anyways!"
+            show tetra Happy at left
             t "Okay let me bring out my dice."
             o "Oh my god, Tetra!"
             menu:
@@ -180,6 +197,7 @@ label continuing2:
 
 label leftRoute:
     scene forest with Fade(2.0, 0.0, 2.0)
+    show tetra Neutral at left
     t "To be honest, I don't think we went this way at all!"
     show octa Neutral at right
     o "It's fine! As long as we can get away!"
@@ -198,6 +216,7 @@ label leftRoute:
     o "There's no road leading back either..."
     show octa Neutral at right
     o "Why don't we ask the birds?"
+    show tetra Angry at left
     t "That's not gonna work."
 
     o "You never asked how the birds were doing, now come on."
@@ -228,23 +247,29 @@ label leftRoute:
             play sound diceRoll
             if(rollDie >= 4):
                 b "Hello, tiny human."
+                show tetra Happy at left
                 "Tetra jumps back, while Octa laughs."
+                show tetra Angry at left
                 t "Not funny."
                 show octa Happy at right
                 o "It's very funny."
+                show tetra Neutral at left
                 t "Whatever. So little bird, do you know a way back to town?"
                 b "Tiny human, your towns are so different from my own."
                 b "But there is a place to the east from here."
                 o "Thank you, bird friend!"
             else:
                 "The bird starts chirping, and Octa seems enraptured by this converation."
+                show tetra Angry at left
                 t "Tell me you're messing with me."
                 show octa Neutral at right
                 o "Hm? Sorry, I'm talking with the bird."
                 o "So there's something to the east? Gotcha!"
                 o "Okay, Tetra, say thank you to the bird."
+                show tetra Sad at left
                 t "Thank you...?"
         "Do nothing.":
+            show tetra Neutral at left
             "Tetra stands there like a stone statue."
             show octa Neutral at right
             o "Hello? Earth to Tetra?"
@@ -255,6 +280,7 @@ label leftRoute:
                         "Turn into a stone statue.":
                             show octa Sad at right
                             o "Now you're just joking with me."
+                            hide tetra Neutral
                             "Octa nudges Tetra, and he tilts over, slamming into the ground and breaking into bits of stone."
                             "Life's hard when you turn to stone."
                             return
@@ -267,9 +293,11 @@ label leftRoute:
 
     show octa Happy at right
     o "Okay! We got a lead. We head east from here!"
+    show tetra Sad at left
     t "Are you sure a bird is a good source?"
     o "I'll take a bird over that bread monster."
     "Octa raises his hand up as he marches over to the right."
+    show tetra Neutral at left
     t "Fine."
     "Tetra follows after his friend."
     scene birbHouse with Fade(2.0, 0.0, 2.0)
@@ -549,5 +577,6 @@ label rightRoute:
     # This ends the game.
     show octa Angry at right
     o "TETRA WHERE ARE YOU GOING THIS IS THE LEFT NOT RIGHT."
+    show tetra Happy at left
     t "W h a t."
     jump leftRoute

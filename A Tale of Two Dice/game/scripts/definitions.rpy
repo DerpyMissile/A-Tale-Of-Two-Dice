@@ -24,4 +24,9 @@ image octa Angry = "..//images//octaA.png"
 image octa Happy = "..//images//octaH.png"
 image octa Sad = "..//images//octaS.png"
 
+image tetra Neutral = "..//images//tetraN.png"
+image tetra Angry = "..//images//tetraA.png"
+image tetra Happy = "..//images//tetraH.png"
+image tetra Sad = "..//images//tetraS.png"
+
 default rollDie = 1
