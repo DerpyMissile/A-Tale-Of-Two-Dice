@@ -6,9 +6,11 @@
 
     scene bush with Fade(2.0, 0.0, 2.0)
     "The sun beats down on two kids' backs, hiding in a bush."
+    show octa Neutral at right
     o "Listen, Tetra. How much are you willing to bet?"
     t "How much are you willing to bet, Octa?"
     o "Bet?"
+    show octa Happy at right
     o "I'm willing to bet my entire life's savings!"
     t "And how much is that?"
     o "Five pence!"
@@ -16,9 +18,11 @@
     o "Bet you don't have anything like that!"
 
     "Tetra places a finger over Octa's mouth."
+    show octa Neutral at right
     t "Shh!"
     "A man emerges from the shop, tall and stout. His basket filled with steaming bread."
     "Octa's eyes widen."
+    show octa Angry at right
     o "That's him! That's the Viper. The vile villain who uh...."
     t "Who uh....?"
     menu:
@@ -31,6 +35,7 @@ label continuing1:
     o "It doesn't matter! We're gonna get him."
 
     "Octa sneaks up closer to the man."
+    show octa Happy at right
     o "Are you bready for this?"
     t "I'm gonna ignore that."
     t "So what's the plan?"
@@ -39,6 +44,7 @@ label continuing1:
     t "Wait, I had no idea about this!"
     o "Trust me. Viper will have no idea what hit him."
 
+    hide octa Happy
     "And there Octa goes, crawling away like a mischievous rat."
     t "..."
     t "Okay, think, Tetra, what can we do with this?"
@@ -51,6 +57,18 @@ label continuing1:
                     $ rollDie = renpy.random.randint(1, 6)
                 "ROLL DIE WITH PASSION":
                     $ rollDie = renpy.random.randint(1, 6)
+            if(rollDie == 1):
+                show roll1 at truecenter
+            elif(rollDie == 2):
+                show roll2 at truecenter
+            elif(rollDie == 3):
+                show roll3 at truecenter
+            elif(rollDie == 4):
+                show roll4 at truecenter 
+            elif(rollDie == 5):
+                show roll5 at truecenter
+            else:
+                show roll6 at truecenter
             play sound diceRoll
             if(rollDie >= 3):
                 "From out of Tetra's throat, the sound of a sparrow comes out."
@@ -75,6 +93,18 @@ label continuing1:
                     $ rollDie = renpy.random.randint(1, 6)
                 "ROLL DIE WITH PAIN":
                     $ rollDie = renpy.random.randint(1, 6)
+            if(rollDie == 1):
+                show roll1 at truecenter
+            elif(rollDie == 2):
+                show roll2 at truecenter
+            elif(rollDie == 3):
+                show roll3 at truecenter
+            elif(rollDie == 4):
+                show roll4 at truecenter 
+            elif(rollDie == 5):
+                show roll5 at truecenter
+            else:
+                show roll6 at truecenter
             play sound diceRoll
             if(rollDie >= 5):
                 "He lies down and starts rolling quickly down the path."
@@ -90,13 +120,17 @@ label continuing1:
             jump continuing2
 
 label continuing2:
+    scene crossroads with Fade(2.0, 0.0, 2.0)
+    show octa Happy at right
     o "Go go go! I got it!"
+    hide octa Happy
     "Octa zooms by so quickly that Tetra could not get his bearings."
     "The man starts looming over him."
     "Time to book it!"
     "Within seconds, Tetra pushes himself up to run after Octa."
     t "Wait up!"
     "Behind them, the man chases after them, bread and all."
+    show octa Neutral at right
     o "We gotta lose him somehow. Come on!"
 
     "Before the two boys, a crossroad stretches out."
@@ -113,6 +147,7 @@ label continuing2:
             jump rightRoute
         "I don't know?":
             t "Why should I be the one to choose?"
+            show octa Angry at right
             o "We don't have time! Your luck ends up working out anyways!"
             t "Okay let me bring out my dice."
             o "Oh my god, Tetra!"
@@ -123,6 +158,18 @@ label continuing2:
                     $ rollDie = renpy.random.randint(1, 6)
                 "ROLL DIE WITH A CRIPPLING SENSE OF EXISTENTIALISM":
                     $ rollDie = renpy.random.randint(1, 6)
+            if(rollDie == 1):
+                show roll1 at truecenter
+            elif(rollDie == 2):
+                show roll2 at truecenter
+            elif(rollDie == 3):
+                show roll3 at truecenter
+            elif(rollDie == 4):
+                show roll4 at truecenter 
+            elif(rollDie == 5):
+                show roll5 at truecenter
+            else:
+                show roll6 at truecenter
             play sound diceRoll
             if(rollDie >= 4):
                 t "Go right!"
@@ -132,18 +179,24 @@ label continuing2:
                 jump leftRoute
 
 label leftRoute:
+    scene forest with Fade(2.0, 0.0, 2.0)
     t "To be honest, I don't think we went this way at all!"
+    show octa Neutral at right
     o "It's fine! As long as we can get away!"
     "They end up catching their breath near one large tree."
     "Octa looks behind them."
     o "I think we lost him."
     o "But we got it!"
 
+    show octa Happy at right
     "Octa holds the chef's hat victoriously."
+    show octa Neutral at right
     o "Okay, but where are we now?"
     t "I told you I don't remember where this leads."
+    show octa Sad at right
     "Octa deflates at that thought."
     o "There's no road leading back either..."
+    show octa Neutral at right
     o "Why don't we ask the birds?"
     t "That's not gonna work."
 
@@ -160,11 +213,24 @@ label leftRoute:
                     $ rollDie = renpy.random.randint(1, 6)
                 "ROLL DIE WITH THE SOUL OF CHARLES DARWIN":
                     $ rollDie = renpy.random.randint(1, 6)
+            if(rollDie == 1):
+                show roll1 at truecenter
+            elif(rollDie == 2):
+                show roll2 at truecenter
+            elif(rollDie == 3):
+                show roll3 at truecenter
+            elif(rollDie == 4):
+                show roll4 at truecenter 
+            elif(rollDie == 5):
+                show roll5 at truecenter
+            else:
+                show roll6 at truecenter
             play sound diceRoll
             if(rollDie >= 4):
                 b "Hello, tiny human."
                 "Tetra jumps back, while Octa laughs."
                 t "Not funny."
+                show octa Happy at right
                 o "It's very funny."
                 t "Whatever. So little bird, do you know a way back to town?"
                 b "Tiny human, your towns are so different from my own."
@@ -173,34 +239,40 @@ label leftRoute:
             else:
                 "The bird starts chirping, and Octa seems enraptured by this converation."
                 t "Tell me you're messing with me."
+                show octa Neutral at right
                 o "Hm? Sorry, I'm talking with the bird."
                 o "So there's something to the east? Gotcha!"
                 o "Okay, Tetra, say thank you to the bird."
                 t "Thank you...?"
         "Do nothing.":
             "Tetra stands there like a stone statue."
+            show octa Neutral at right
             o "Hello? Earth to Tetra?"
             menu:
                 "Stand there longer.":
                     o "Uhhh... Tetra?"
                     menu:
                         "Turn into a stone statue.":
+                            show octa Sad at right
                             o "Now you're just joking with me."
                             "Octa nudges Tetra, and he tilts over, slamming into the ground and breaking into bits of stone."
                             "Life's hard when you turn to stone."
                             return
                 "Wave hand.":
+                    show octa Neutral at right
                     o "Well, don't scare me like that!"
                     o "Anyways, I talked to the bird, and there's something east from here."
                     t "You talked to a bird?"
                     o "And you almost turned into stone."
 
+    show octa Happy at right
     o "Okay! We got a lead. We head east from here!"
     t "Are you sure a bird is a good source?"
     o "I'll take a bird over that bread monster."
     "Octa raises his hand up as he marches over to the right."
     t "Fine."
     "Tetra follows after his friend."
+    scene birbHouse with Fade(2.0, 0.0, 2.0)
     "A large expanse of trees fold before them. In fact, it like their own civilization."
     "Bridges and ropes and seeds and waaaay more birds than expected."
     t "What is this?"
@@ -208,6 +280,7 @@ label leftRoute:
     "A red bird flies down to perch on Octa's shoulders."
     o "This must be the amazing bird civilizations from the stories!"
     t "Wait, you've heard of this?"
+    show octa Neutral at right
     o "Obviously, who hasn't? Anyways, birdie, do you know where the town is?"
     "The bird chirps and shakes its head."
     t "Well, could you lead us to your ruler?"
@@ -220,10 +293,12 @@ label leftRoute:
     "The boys have no idea when they'll reach the top until they stand before two ornate doors."
     "The doors open inward to reveal a royal blue bird."
     t "I've never seen a bird so big..."
+    show octa Angry at right
     o "Don't be rude to their ruler!"
     "The large bird tilts its head towards them."
     b "Welcome to our humble abode! My name is Queen Birb."
     b "Might I interest you treats or a tour of this place?"
+    show octa Neutral at right
     "Octa looks to Tetra."
     menu:
         "Bow head.":
@@ -247,6 +322,7 @@ label leftRoute:
     b "We prefer to not war with the rest of the humans again."
     o "Look, Tetra! We can go home now!"
     t "Are you even sure?"
+    show octa Happy at right
     o "It's better than being lost!"
     "To the side, two large birds appear near the window."
     b "Those two birds shall be your rides. Though you're always welcome to come back."
@@ -255,8 +331,10 @@ label leftRoute:
 
     "The two boys climb onto the backs of the larger birds."
     t "Huh, why don't these ones speak?"
+    show octa Neutral at right
     o "You just can't understand them."
     "The birds squawk and within seconds the two boys ascend into the air."
+    show octa Happy at right
     o "I've never seen something like this in my life!"
     menu:
         "Roll Die":
@@ -265,6 +343,18 @@ label leftRoute:
             $ rollDie = renpy.random.randint(1, 6)
         "ROLL DIE WITH OH GOD WE'RE GONNA PLUMMET TO OUR DEATHS":
             $ rollDie = renpy.random.randint(1, 6)
+    if(rollDie == 1):
+        show roll1 at truecenter
+    elif(rollDie == 2):
+        show roll2 at truecenter
+    elif(rollDie == 3):
+        show roll3 at truecenter
+    elif(rollDie == 4):
+        show roll4 at truecenter 
+    elif(rollDie == 5):
+        show roll5 at truecenter
+    else:
+        show roll6 at truecenter
     play sound diceRoll
     if(rollDie >= 5):
         t "Me too! I might want to come back to this place."
@@ -277,7 +367,9 @@ label leftRoute:
     else:
         t "Help!"
         "Tetra slips from the back of the bird."
+        show octa Neutral at right
         o "Tetra!"
+        show octa Sad at right
         o "Hey, birdie, please?"
         menu:
             "Roll Die":
@@ -286,9 +378,22 @@ label leftRoute:
                 $ rollDie = renpy.random.randint(1, 6)
             "ROLL DIE WITH THE POWER OF THE UNYIELDING BIRB KNIGHT":
                 $ rollDie = renpy.random.randint(1, 6)
+        if(rollDie == 1):
+            show roll1 at truecenter
+        elif(rollDie == 2):
+            show roll2 at truecenter
+        elif(rollDie == 3):
+            show roll3 at truecenter
+        elif(rollDie == 4):
+            show roll4 at truecenter 
+        elif(rollDie == 5):
+            show roll5 at truecenter
+        else:
+            show roll6 at truecenter
         play sound diceRoll
         if(rollDie >= 4):
             "Two claws latch onto Tetra's shoulders, pulling him out of free fall."
+            show octa Happy at right
             o "I've got you!"
             "Tetra squirms in the grip, but stills himself."
             t "This is a horrible experience."
@@ -310,6 +415,18 @@ label leftRoute:
                             $ rollDie = renpy.random.randint(1, 6)
                         "ROLL DIE WITH A PIECE OF LEATHER":
                             $ rollDie = renpy.random.randint(1, 6)
+                    if(rollDie == 1):
+                        show roll1 at truecenter
+                    elif(rollDie == 2):
+                        show roll2 at truecenter
+                    elif(rollDie == 3):
+                        show roll3 at truecenter
+                    elif(rollDie == 4):
+                        show roll4 at truecenter 
+                    elif(rollDie == 5):
+                        show roll5 at truecenter
+                    else:
+                        show roll6 at truecenter
                     play sound diceRoll
                     if(rollDie > 2):
                         w "Child, you have appear out of the sky all of a sudden."
@@ -330,6 +447,18 @@ label leftRoute:
                             $ rollDie = renpy.random.randint(1, 6)
                         "ROLL DIE WITH A PIECE OF LEATHER":
                             $ rollDie = renpy.random.randint(1, 6)
+                    if(rollDie == 1):
+                        show roll1 at truecenter
+                    elif(rollDie == 2):
+                        show roll2 at truecenter
+                    elif(rollDie == 3):
+                        show roll3 at truecenter
+                    elif(rollDie == 4):
+                        show roll4 at truecenter 
+                    elif(rollDie == 5):
+                        show roll5 at truecenter
+                    else:
+                        show roll6 at truecenter
                     play sound diceRoll
                     if(rollDie > 2):
                         "Tetra picks up the stick and readies it to attack."
@@ -345,17 +474,21 @@ label leftRoute:
 
     "The birds land without a problem onto the familiar streets the boys know."
     "They wave a thanks and farewell to the birds."
+    scene bush with Fade(2.0, 0.0, 2.0)
+    show octa Happy at right
     o "Now what do you think about that for an adventure?"
     t "Not what I signed up for. At all."
     o "Come on, now-"
     m "You."
     "Octa scurries to hide behind Tetra."
+    hide octa Happy
     t "You."
     m "You're friends with the birds now, I take it?"
     o "We are! So you should fear us!"
 
     "The man lets out a hearty laugh."
     m "I'm actually friends with them too!"
+    show octa Neutral at right
     o "Wait.... I thought you made bread monsters!"
     t "Now where did you hear that from?"
     m "But I lost my lucky hat, and my bread hasn't been good since."
@@ -363,6 +496,7 @@ label leftRoute:
     o "Don't mind my friend here."
     "Octa procures a white hat out of thin air?"
     "Thought he lost it for a while."
+    show octa Happy at right
     o "Would this be yours?"
 
     "The man takes the hat from Octa's hands."
@@ -373,21 +507,27 @@ label leftRoute:
     o "Count your blessings, Tetra. Count them lots."
 
     m "Now, I have to feed the birds."
+    show octa Neutral at right
     o "Can we join?"
     t "Octa!"
+    show octa Sad at right
     o "What? Nothing wrong with just asking."
     m "You'd like to join me?"
     "The man pulls out extra bread from his basket."
     m "Let us go then!"
+    show octa Happy at right
     m "I'm not the well-known baker of this place for nothing!"
 
     "The boys rush after the baker and his bread."
+    scene goodend with Fade(2.0, 0.0, 2.0)
     "When they stop on a grassy field, multiple birds land nearby."
     "Though wary at first, the three pass out the bread to all of them."
     "Octa takes turns talking to each of the birds, introducing everyone to each one."
     t "So about what we're betting?"
+    show octa Neutral at right
     o "Betting? I didn't say anything about that."
     t "Your five pence, or whatever it is."
+    show octa Happy at right
     o "Well.... Let's roll then! You have a die for a reason."
     o "If you get the number I'm thinking, you win!"
     "Tetra shakes the die and rolls."
@@ -400,12 +540,14 @@ label leftRoute:
             $ rollDie = renpy.random.randint(1, 6)
     play sound diceRoll
     "It lands."
+    show octa Sad at right
     o "Dang it!"
 
     return
 
 label rightRoute:
     # This ends the game.
+    show octa Angry at right
     o "TETRA WHERE ARE YOU GOING THIS IS THE LEFT NOT RIGHT."
     t "W h a t."
     jump leftRoute
